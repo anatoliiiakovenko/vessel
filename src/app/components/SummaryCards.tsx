@@ -5,12 +5,21 @@ interface SummaryCardsProps {
   deviations: QuarterlyDeviation[];
 }
 
-export default function SummaryCards({ vessels, deviations }: SummaryCardsProps) {
-  const avgDeviation = deviations.length > 0
-    ? (deviations.reduce((sum, d) => sum + d.deviationPercentage, 0) / deviations.length).toFixed(1)
-    : '0';
+export default function SummaryCards({
+  vessels,
+  deviations,
+}: SummaryCardsProps) {
+  const avgDeviation =
+    deviations.length > 0
+      ? (
+          deviations.reduce((sum, d) => sum + d.deviationPercentage, 0) /
+          deviations.length
+        ).toFixed(1)
+      : '0';
 
-  const aboveBaselineCount = deviations.filter(d => d.deviationPercentage > 0).length;
+  const aboveBaselineCount = deviations.filter(
+    d => d.deviationPercentage > 0
+  ).length;
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 gap-6">

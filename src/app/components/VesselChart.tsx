@@ -141,10 +141,7 @@ export default function VesselChart({ vessels, deviations }: VesselChartProps) {
   return (
     <div className="bg-white rounded-lg shadow p-6">
       {deviations.length > 0 ? (
-        <HighchartsReact
-          highcharts={Highcharts}
-          options={getChartOptions()}
-        />
+        <HighchartsReact highcharts={Highcharts} options={getChartOptions()} />
       ) : (
         <div className="text-center py-12">
           <p className="text-gray-500">No deviation data available</p>

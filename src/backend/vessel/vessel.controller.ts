@@ -1,6 +1,6 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { VesselService } from './vessel.service';
-import {QuarterlyDeviation} from "@/types";
+import { QuarterlyDeviation } from '@/types';
 
 @Controller('api/vessels')
 export class VesselController {

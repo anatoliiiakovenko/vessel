@@ -1,6 +1,6 @@
 'use client';
 
-import {useVesselData} from "@/app/hooks/useVesselData";
+import { useVesselData } from '@/app/hooks/useVesselData';
 import SummaryCards from './SummaryCards';
 import VesselList from './VesselList';
 import VesselChart from './VesselChart';
