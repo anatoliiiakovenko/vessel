@@ -1,9 +1,9 @@
 'use client';
 
 import { useVesselData } from '@/app/hooks/useVesselData';
-import SummaryCardsBar from './SummaryCardsBar';
-import VesselList from './VesselList';
-import VesselChart from './VesselChart';
+import SummaryCardsBar from './summary-cards-bar';
+import VesselList from './vessel-list';
+import VesselChart from './vessel-chart';
 import Loader from '@/app/components/ui/Loader';
 import ErrorInfo from '@/app/components/ui/ErrorInfo';
 

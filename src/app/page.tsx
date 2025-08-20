@@ -1,4 +1,4 @@
-import VesselDashboard from './components/Dashboard/VesselDashboard';
+import VesselDashboard from '@/app/components/dashboard/vessel-dashboard';
 
 export default function Home() {
   return (

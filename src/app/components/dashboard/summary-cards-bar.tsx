@@ -1,5 +1,5 @@
 import { QuarterlyDeviation, SummaryCardData, Vessel } from '@/types';
-import SummaryCard from './SummaryCard';
+import SummaryCard from './summary-card';
 
 interface SummaryCardsProps {
   vessels: Vessel[];
