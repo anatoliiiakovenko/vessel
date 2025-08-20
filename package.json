@@ -6,22 +6,46 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:seed": "tsx prisma/seed.ts",
+    "backend:dev": "nest start --watch",
+    "backend:build": "nest build"
   },
   "dependencies": {
+    "@nestjs/common": "^10.0.0",
+    "@nestjs/core": "^10.0.0",
+    "@nestjs/platform-express": "^10.0.0",
+    "@prisma/client": "^5.0.0",
+    "decimal.js": "^10.6.0",
+    "highcharts": "^11.0.0",
+    "highcharts-react-official": "^3.2.0",
+    "next": "15.4.7",
+    "pg": "^8.11.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.4.7"
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@nestjs/cli": "^10.0.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/decimal.js": "^0.0.32",
     "@types/node": "^20",
+    "@types/pg": "^8.10.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.4.7",
-    "@eslint/eslintrc": "^3"
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.2.0",
+    "prisma": "^5.0.0",
+    "tailwindcss": "^4",
+    "tsx": "^4.0.0",
+    "typescript": "^5"
   }
 }

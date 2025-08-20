@@ -1,0 +1,87 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Vessel {
+  id         Int    @id @default(autoincrement())
+  name       String @map("Name")
+  imoNo      Int    @unique @map("IMONo")
+  vesselType Int    @map("VesselType")
+
+  // Relations
+  emissions DailyLogEmission[]
+
+  @@map("vessels")
+}
+
+model DailyLogEmission {
+  id       Int      @id @default(autoincrement()) @map("EID")
+  vesselId Int      @map("VesselID")
+  logId    BigInt   @map("LOGID")
+  fromUTC  DateTime @map("FromUTC")
+  toUTC    DateTime @map("TOUTC")
+
+  // Main Engine Tank to Wake CO2
+  metTwCo2 Float @map("MET2WCO2")
+  aetTwCo2 Float @map("AET2WCO2")
+  botTwCo2 Float @map("BOT2WCO2")
+  vrtTwCo2 Float @map("VRT2WCO2")
+  totTwCo2 Float @map("TotT2WCO2")
+
+  // Well to Wake CO2e
+  mewTwCo2e Float @map("MEW2WCO2e")
+  aewTwCo2e Float @map("AEW2WCO2e")
+  bowTwCo2e Float @map("BOW2WCO2e")
+  vrwTwCo2e Float @map("VRW2WCO2e")
+  totWtwCo2 Float @map("ToTW2WCO2")
+
+  // SOx emissions
+  meSox  Float @map("MESox")
+  aeSox  Float @map("AESox")
+  boSox  Float @map("BOSox")
+  vrSox  Float @map("VRSox")
+  totSox Float @map("TotSOx")
+
+  // NOx emissions
+  meNox  Float @map("MENOx")
+  aeNox  Float @map("AENOx")
+  totNox Float @map("TotNOx")
+
+  // PM10 emissions
+  mePm10  Float @map("MEPM10")
+  aePm10  Float @map("AEPM10")
+  totPm10 Float @map("TotPM10")
+
+  // Additional metrics
+  aerCo2Ttw   Float @map("AERCO2T2W")
+  aerCo2eWtw  Float @map("AERCO2eW2W")
+  eeoiCo2eWtw Float @map("EEOICO2eW2W")
+
+  createdAt DateTime @map("CreatedAt")
+  updatedAt DateTime @map("UpdatedAt")
+
+  // Relations
+  vessel Vessel @relation(fields: [vesselId], references: [imoNo])
+
+  @@map("daily_log_emissions")
+}
+
+model CE_PPSCCReferenceLine {
+  rowId        Int    @id @map("RowID")
+  category     String @map("Category")
+  vesselTypeId Int    @map("VesselTypeID")
+  size         String @map("Size")
+  traj         String @map("Traj")
+  a            Float  @map("a")
+  b            Float  @map("b")
+  c            Float  @map("c")
+  d            Float  @map("d")
+  e            Float  @map("e")
+
+  @@map("ce_ppscc_reference_lines")
+}
