@@ -16,6 +16,7 @@ export class VesselController {
     return this.vesselService.getQuarterlyDeviations();
   }
 
+  // For further features
   @Get(':id/emissions')
   async getVesselEmissions(@Param('id') id: string) {
     return this.vesselService.getVesselEmissions(parseInt(id));

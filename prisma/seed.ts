@@ -27,13 +27,13 @@ async function main() {
   );
 
   // Clear existing data
-  console.log('🧹 Clearing existing data...');
+  console.log(' Clearing existing data...');
   await prisma.dailyLogEmission.deleteMany();
   await prisma.vessel.deleteMany();
   await prisma.cE_PPSCCReferenceLine.deleteMany();
 
   // Seed vessels
-  console.log('🚢 Seeding vessels...');
+  console.log(' Seeding vessels...');
   for (const vessel of vessels) {
     await prisma.vessel.create({
       data: {
@@ -45,7 +45,7 @@ async function main() {
   }
 
   // Seed PP reference data
-  console.log('📈 Seeding PP reference data...');
+  console.log(' Seeding PP reference data...');
   for (const ref of ppReference) {
     await prisma.cE_PPSCCReferenceLine.create({
       data: {
@@ -115,7 +115,7 @@ async function main() {
 
 main()
   .catch(e => {
-    console.error('❌ Seed failed:', e);
+    console.error(' Seed failed:', e);
     process.exit(1);
   })
   .finally(async () => {
