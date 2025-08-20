@@ -22,3 +22,9 @@ export type QuarterlyDataType = {
   date: string;
   totalEmissions: number;
 };
+
+export interface SummaryCardData {
+  title: string;
+  value: string | number;
+  textColor?: string;
+}

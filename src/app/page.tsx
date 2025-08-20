@@ -1,4 +1,4 @@
-import VesselDashboard from './components/VesselDashboard';
+import VesselDashboard from './components/Dashboard/VesselDashboard';
 
 export default function Home() {
   return (
