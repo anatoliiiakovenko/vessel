@@ -2,8 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { calculatePPSCCBaselines } from '../utils/calculate-pp-scc-baselines.util';
 import Decimal from 'decimal.js/decimal';
-import { QuarterlyDeviation } from '@/types';
-import { getQuarterlyLastDayEmissions } from '@/backend/utils/quarterly-emissions.util';
+import { QuarterlyDeviation } from '../types';
+import { getQuarterlyLastDayEmissions } from '../utils/quarterly-emissions.util';
 
 @Injectable()
 export class VesselService {

@@ -1,5 +1,5 @@
 import { DailyLogEmission } from '@prisma/client';
-import { QuarterlyDataType } from '@/types';
+import { QuarterlyDataType } from '../types';
 
 export function getQuarterlyLastDayEmissions(
   emissions: DailyLogEmission[]
